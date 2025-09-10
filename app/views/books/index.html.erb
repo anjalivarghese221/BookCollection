@@ -1,0 +1,18 @@
+<h1>All Books</h1>
+
+<%= link_to "Add New Book", new_book_path %>
+
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= book.title %>
+      <%= link_to "Show", book_path(book) %> |
+      <%= link_to "Edit", edit_book_path(book) %> |
+      <%= link_to "Delete", delete_book_path(book) %>
+    </li>
+  <% end %>
+</ul>
+
+<% if notice %>
+  <p style="color: green;"><%= notice %></p>
+<% end %>

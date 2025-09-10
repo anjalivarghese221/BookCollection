@@ -1,0 +1,10 @@
+<h1>Book Details</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<%= link_to "Back to Home", books_path %> |
+<%= link_to "Edit", edit_book_path(@book) %> |
+<%= link_to "Delete", delete_book_path(@book) %>
