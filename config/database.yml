@@ -1,21 +1,26 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: 127.0.0.1
-  username: postgres
-  password: postgres
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
+  host: 127.0.0.1
+  username: postgres
+  password: postgres
   database: book_collection_2_anjalivarghese221_development
 
 test:
   <<: *default
+  host: 127.0.0.1
+  username: postgres
+  password: postgres
   database: book_collection_2_anjalivarghese221_test
 
 production:
   <<: *default
-  database: book_collection_2_anjalivarghese221_production
-  username: book_collection_2_anjalivarghese221
-  password: <%= ENV["BOOK_COLLECTION_2_ANJALIVARGHESE221_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  
+review:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
